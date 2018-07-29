@@ -140,10 +140,6 @@
         </section>
         <!-- /End Page Header -->
 
-
-        <!-- =========================
-           BLOG SECTION
-        ============================== -->
         <section class="p-y-md">
             <div class="container">
                 <div class="row">
@@ -346,14 +342,7 @@
                 </div><!-- /End Row -->
             </div><!-- /End Container -->
         </footer>
-
-
-
-       
-
-
-
-    </div><!-- /End Main Container -->
+</div><!-- /End Main Container -->
 
 
     <!-- Back to Top Button -->

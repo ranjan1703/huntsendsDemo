@@ -16,12 +16,15 @@ function homePost(){
         $blog_author=$row_blog['blog_author'];
         $blog_image=$row_blog['blog_image'];
         $blog_body=$row_blog['blog_body'];
+        $date=strtotime($blog_date);
+        $date1=date("j F",$date);
         echo "
         <div class='col-sm-6'>
                             <a href='blog-single.php?blog_id=$blog_id'><img src='images/$blog_image' alt='' class='img-responsive img-rounded'></a>
                             <div class='post-info'>
                                 <div class='date text-edit'>
-                                    <span class='day'>25</span> Nov
+                                    <span class='day'>
+                                    $date1</span>
                                 </div>
                                 <a href=''>
                                     <h5>$blog_title.</h5>
@@ -37,8 +40,25 @@ function homePost(){
         
 }
 
-function formateDate($blog_date){
-	return date('d j, M, Y', strtotime($blog_date));
+function getCat(){
+    global $con;
+    $get_cat= "SELECT * from category";
+    $run_cat= mysqli_query($con, $get_cat);
+    while ($row_cat=mysqli_fetch_array($run_cat)) {
+        $cat_id=$row_cat['cat_id'];
+        $cat_title=$row_cat['cat_title'];
+
+        echo "<p><strong>$cat_title</strong></p>
+
+        ";
+
+    }
+}
+function about(){
+    $myfile=fopen("about.txt", "r") or die("unable to open file");
+    $show= fread($myfile, filesize("about.txt"));
+    echo "
+<p class='m-t'>$show</p>    ";
 }
     
 

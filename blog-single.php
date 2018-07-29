@@ -58,11 +58,11 @@
 
     <!-- Preloader -->
     <div class="loader bg-blue">
-        <div class="loader-inner ball-scale-ripple-multiple vh-center">
+        <!-- <div class="loader-inner ball-scale-ripple-multiple vh-center">
             <div></div>
             <div></div>
             <div></div>
-        </div>
+        </div> -->
     </div>
     
 
@@ -152,6 +152,7 @@
                         <div class="blog-list p-b m-b-md">   
                         <?php
                     if(isset($_GET['blog_id'])){
+                        
                         $blog_id=$_GET['blog_id'];
                    $get_blog="SELECT * from blog where blog_id='$blog_id'";
     $run_blog=mysqli_query($con,$get_blog);
@@ -167,12 +168,15 @@
         $blog_image=$row_blog['blog_image'];
         $blog_body=$row_blog['blog_body'];
         $blog_keywords=$row_blog['blog_keywords'];
+
+        $date=strtotime($blog_date);
+        $date1=date("j F Y",$date);
         echo" 
                             <div class='blog-post'>
                                 <img src='images/$blog_image' alt=''/>
                                 <div class='date'>
-                                    26
-                                    <span>jul 2018</span>
+                                    
+                                    <span>$date1</span>
                                 </div>
                                 <h4><a href='#''>Standard blog post with photo</a></h4>
                                 <ul class='post-meta'>

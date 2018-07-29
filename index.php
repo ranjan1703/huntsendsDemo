@@ -59,12 +59,12 @@ include('function.php');?>
 <body data-spy="scroll" data-target="#main-navbar">
 
     <!-- Preloader -->
-    <div class="loader bg-green">
+    <!-- <div class="loader bg-green">
         <div class="loader-inner ball-scale-ripple-multiple vh-center">
             <div></div>
             <div></div>
             <div></div>
-        </div>
+        </div> -->
     </div>
 
 
@@ -547,7 +547,7 @@ include('function.php');?>
                     <!-- Footer Logo and Text -->
                     <div class="col-md-6">
                         <img src="" alt="LOGO">
-                        <p class="m-t">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <?php about();?>
                         <div class="footer-social social-btn m-t-md">
                             <a href="#" class="sb-white"><i class="fa fa-facebook text-black"></i></a>
                             <a href="#" class="sb-white"><i class="fa fa-google-plus text-black"></i></a>
@@ -571,7 +571,8 @@ include('function.php');?>
                     </div>
                     <!-- Footer Links -->
                     <div class="col-md-2">
-                        <p><strong>Categories</strong></p>
+                    <p><strong>Categories</strong></p>                        
+                    <?php getCat();?>
 
 
                     </div>
